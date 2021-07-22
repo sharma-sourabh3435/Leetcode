@@ -17,10 +17,13 @@ link: https://leetcode.com/problems/reverse-integer/
 
 class ReverseInteger {
     public static int reverse(int x) {
+        // initialize an integer to zero
         int num = 0;
+        // until x is not zero, this loop will function
         while(x != 0) {
+            // make use of fact that a number abc = a*100 + b*10 + c*1 and so on
             int number = num*10 + x%10;
-
+            
             if((number - x%10)/10 != num) {
                 return 0;
             }

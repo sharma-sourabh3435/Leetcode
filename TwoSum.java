@@ -43,14 +43,19 @@ import java.util.Map;
 
 class TwoSum {
     public int[] twoSum(int[] nums, int target) {
+        // Use hashmap for O(n) solution
         Map<Integer, Integer> map = new HashMap<>();
+        // for loop to go through all elements of array
         for (int i=0; i<nums.length; i++) {
+            // create a variable integer to store ith element of array
             int x = nums[i];
+            // if map contains target-x then return the position of element in array and position of target-x as array
             if(map.containsKey(target-x)) {
                 return new int[] { map.get(target-x), i};
             }
             map.put(x,i);
         }
+        // otherwise throw exception
         throw new IllegalArgumentException("No two sum solution");
     }
 }

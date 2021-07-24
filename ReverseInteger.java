@@ -23,13 +23,14 @@ class ReverseInteger {
         while(x != 0) {
             // make use of fact that a number abc = a*100 + b*10 + c*1 and so on
             int number = num*10 + x%10;
-            
+            // to check that num is in range
             if((number - x%10)/10 != num) {
                 return 0;
             }
             else {
                 num = number;
             }
+            // divide x by 10 to get rid of last digit. number abcd becomes abc
             x = x / 10;
         }
         return num;

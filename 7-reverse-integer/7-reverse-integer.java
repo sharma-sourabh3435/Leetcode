@@ -7,9 +7,9 @@ class Solution {
             if((number - x%10)/10 != num) {
                 return 0;
             }
-            else 
+            else {
                 num = number;
-        
+        }
             x = x / 10;
         }
         return num;

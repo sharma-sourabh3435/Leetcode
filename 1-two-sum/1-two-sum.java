@@ -7,7 +7,7 @@ class Solution {
         for(int i = 0; i < nums.length; i++) {
             int complement = target - nums[i]; 
             if(meow.containsKey(complement)) {
-                return new int[] {i, meow.get(complement)};
+                return new int[] {meow.get(complement), i};
             }
             else {
                 meow.put(nums[i], i);

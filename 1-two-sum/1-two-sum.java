@@ -1,13 +1,16 @@
+import java.util.HashMap;
+
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> meow = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> m = new HashMap<Integer, Integer>();
         for(int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i]; 
-            if(meow.containsKey(complement)) {
-                return new int[] {i, meow.get(complement)};
+            
+            int c = target - nums[i];
+            if(m.containsKey(c)){
+                return new int[] {i, m.get(c)};
             }
             else {
-                meow.put(nums[i], i);
+                m.put(nums[i], i);
             }
         }
         return new int[] {};
